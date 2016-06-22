@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeck.Console", "CardDeck.Console\CardDeck.Console.csproj", "{C8F68A3B-476C-4898-BE1B-B0E49AD85039}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeck.Domain", "CardDeck.Domain\CardDeck.Domain.csproj", "{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C8F68A3B-476C-4898-BE1B-B0E49AD85039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F68A3B-476C-4898-BE1B-B0E49AD85039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F68A3B-476C-4898-BE1B-B0E49AD85039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
