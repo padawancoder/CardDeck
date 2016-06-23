@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeck.Console", "CardDec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeck.Domain", "CardDeck.Domain\CardDeck.Domain.csproj", "{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardDeck.Tests.Unit", "CardDeck.Tests.Unit\CardDeck.Tests.Unit.csproj", "{369DCB03-AA2B-48A9-A4B5-283ED3DBAA83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA88E9B7-AFA1-483F-9092-9CC6A4B591B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369DCB03-AA2B-48A9-A4B5-283ED3DBAA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369DCB03-AA2B-48A9-A4B5-283ED3DBAA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369DCB03-AA2B-48A9-A4B5-283ED3DBAA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369DCB03-AA2B-48A9-A4B5-283ED3DBAA83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

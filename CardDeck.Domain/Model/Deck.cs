@@ -28,6 +28,13 @@ namespace CardDeck.Domain.Model
         {
             cards.Sort(delegate(ICard x, ICard y)
             {
+                if (!asc)
+                {
+                    var tmp = x;
+                    x = y;
+                    y = tmp;
+                }
+
                 var result = x.Suit.CompareTo(y.Suit);
                 if (result == 0) result = x.Value.CompareTo(y.Value);
                 return result;
