@@ -7,7 +7,7 @@ namespace CardDeck.Domain.Model
     /// <summary>
     /// Abstract implementation of a deck. Shuffling, sorting, and viewing the cards will be the same. Doesn't matter if you're looking at a Poker or an Uno deck.
     /// </summary>
-    public abstract class Deck
+    public abstract class Deck : IDeck
     {
         protected readonly List<ICard> cards = new List<ICard>();
 

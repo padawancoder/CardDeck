@@ -7,7 +7,7 @@ namespace CardDeck.Domain.Model
     /// <summary>
     /// Specific implementation of a PokerDeck which uses PokerCards (inherits from ICard). 
     /// </summary>
-    public class PokerDeck : Deck, IDeck
+    public class PokerDeck : Deck
     {
         public PokerDeck()
         {
