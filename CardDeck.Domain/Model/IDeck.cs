@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CardDeck.Domain.Model
 {
     /// <summary>
-    /// Each implementation of IDeck will build it's on deck. Maybe you'd rather play Uno then Poker?
+    /// All card decks should implement these methods. 
     /// </summary>
     public interface IDeck
     {
         void Shuffle();
         void Sort(bool asc);
-        List<ICard> CardsToList();
+        IQueryable<ICard> Cards();
     }
 }

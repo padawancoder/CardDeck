@@ -15,11 +15,12 @@ namespace CardDeck.Tests.Unit
             var deck = new PokerDeck();
 
             //Execute
-            var cards = deck.CardsToList();
+            var cards = deck.Cards();
 
             //Verify
             cards.Should().HaveCount(52);
             cards.Should().OnlyHaveUniqueItems();
+            cards.GroupBy(x => x.Suit).Should().HaveCount(4);
         }
 
         [Test]
@@ -29,14 +30,21 @@ namespace CardDeck.Tests.Unit
             var deck = new PokerDeck();
 
             //Execute
+            deck.Shuffle();
+            var unshuffled = deck.Cards().ToList();
             deck.Sort();
-            
+
             //Verify
-            deck.CardsToList().Should().BeInAscendingOrder(x => x.Suit);
-            foreach (var grouping in deck.CardsToList().GroupBy(x=>x.Suit))
+
+            Assert.That(unshuffled, Is.Not.Ordered.By("Suit")); 
+            Assert.That(unshuffled, Is.Not.Ordered.By("Value"));
+
+            deck.Cards().Should().BeInAscendingOrder(x => x.Suit);
+            foreach (var grouping in deck.Cards().GroupBy(x=>x.Suit))
             {
                 grouping.ToList().Should().BeInAscendingOrder(x=>x.Value);
             }
+
         }
 
         [Test]
@@ -46,11 +54,17 @@ namespace CardDeck.Tests.Unit
             var deck = new PokerDeck();
 
             //Execute
+            deck.Shuffle();
+            var unshuffled = deck.Cards().ToList();
             deck.Sort(false);
 
             //Verify
-            deck.CardsToList().Should().BeInDescendingOrder(x => x.Suit);
-            foreach (var grouping in deck.CardsToList().GroupBy(x => x.Suit))
+            Assert.That(unshuffled, Is.Not.Ordered.By("Suit")); 
+            Assert.That(unshuffled, Is.Not.Ordered.By("Value"));
+
+
+            deck.Cards().Should().BeInDescendingOrder(x => x.Suit);
+            foreach (var grouping in deck.Cards().GroupBy(x => x.Suit))
             {
                 grouping.ToList().Should().BeInDescendingOrder(x => x.Value);
             }
@@ -63,21 +77,30 @@ namespace CardDeck.Tests.Unit
             var deck = new PokerDeck();
 
             //Execute
-            deck.Shuffle();
-            var shuffle1 = deck.CardsToList();
+            deck.Sort();
+            var sorted = deck.Cards().ToList();
 
             deck.Shuffle();
-            var shuffle2 = deck.CardsToList();
+            var shuffle1 = deck.Cards();
 
             deck.Shuffle();
-            var shuffle3 = deck.CardsToList();
+            var shuffle2 = deck.Cards();
+
+            deck.Shuffle();
+            var shuffle3 = deck.Cards();
 
 
             //Verify
-            shuffle1.Should().NotBeSameAs(shuffle2);
+            sorted.Should().BeInAscendingOrder(x => x.Suit); //test that everything is sorted
+
+            shuffle1.Should().NotBeSameAs(shuffle2); //test that everything gets shuffled and is different each time.
             shuffle1.Should().NotBeSameAs(shuffle3);
             shuffle2.Should().NotBeSameAs(shuffle3);
-            deck.CardsToList().Should().OnlyHaveUniqueItems();
+            deck.Cards().Should().OnlyHaveUniqueItems();
+
+            Assert.That(shuffle1, Is.Not.Ordered.By("Suit")); 
+            Assert.That(shuffle1, Is.Not.Ordered.By("Value"));
+
         }
     }
 }
