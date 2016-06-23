@@ -41,9 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Deck.cs" />
-    <Compile Include="Model\ICard.cs" />
     <Compile Include="Model\IDeck.cs" />
+    <Compile Include="Model\ICard.cs" />
     <Compile Include="Model\PokerCard.cs" />
+    <Compile Include="Model\PokerDeck.cs" />
     <Compile Include="Model\Suit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

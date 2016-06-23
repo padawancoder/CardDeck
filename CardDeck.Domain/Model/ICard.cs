@@ -1,8 +1,11 @@
-namespace CardDeck.Console
+using System;
+
+namespace CardDeck.Domain.Model
 {
-    public interface ICard<T>
+    public interface ICard
     {
-        int value { get; set; }
-        T suit { get; set; }
+        Enum Suit { get; set; } 
+
+        int Value { get; set; }
     }
 }

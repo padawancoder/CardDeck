@@ -1,17 +1,16 @@
-using CardDeck.Console;
+using System;
 
 namespace CardDeck.Domain.Model
 {
-    public class PokerCard : ICard<Suit>
+    public class PokerCard : ICard
     {
         public PokerCard(Suit suit, int value)
         {
-            this.suit = suit;
-            this.value = value;
+            this.Suit = suit;
+            this.Value = value;
         }
 
-        public Suit suit { get; set; } 
-
-        public int value { get; set; }
+        public Enum Suit { get; set; }
+        public int Value { get; set; }
     }
 }
